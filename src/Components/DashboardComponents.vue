@@ -8,26 +8,34 @@ const emit = defineEmits(["change-page"]);
     <h1 class="title">Dashboard</h1>
 
     <nav>
-    <button @click="emit('change-page', 'home')">Home</button>
-    <button @click="emit('change-page', 'book')">Book</button>
-    <button @click="emit('change-page', 'users')">Users</button>
-    <button @click="emit('change-page', 'form')">FormUsers</button>
-    <button @click="emit('change-page', 'orders')">Orders</button>
-    <button @click="emit('change-page', 'reports')">Reports</button>
-    <button @click="emit('change-page', 'settings')">Settings</button>
+    <router-link to="/">Home</router-link>
+    <router-link to="/formulaire">Formulaire</router-link>
+    <router-link to="/formusers">FormUsers</router-link>
+    <router-link to="/orders">Orders</router-link>
+    <router-link to="/settings">Settings</router-link>
+    <router-link to="/users">Users</router-link>
+    <router-link to="/reports">Reports</router-link>
     </nav>
   </aside>
 </template>
 
 <style scoped>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .sidebar {
   width: 260px;
 }
 
-nav button {
+nav{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   width: 100%;
+  padding-inline: 5%;
   text-align: left;
-  padding: 12px;
   margin-bottom: 10px;
   border: none;
   background: white;
